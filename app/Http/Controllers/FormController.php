@@ -14,7 +14,8 @@ class FormController extends Controller
      */
     public function index()
     {
-        //
+        $forms = Form::with(['questions', 'questions.options'] )->get();
+        return response()->json( [ 'data' => $forms ]);
     }
 
     /**
@@ -23,7 +24,7 @@ class FormController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
+    {        
         //
     }
 
