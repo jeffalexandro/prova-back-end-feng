@@ -20,8 +20,8 @@ class Question extends Model
         return $this->belongsTo('App\Form');
     }
 
-    public function questions()
+    public function options()
     {
-        return $this->hasMany('App\Question');
+        return $this->hasMany('App\Option');
     }
 }
